@@ -82,33 +82,24 @@ char *termname = "st-256color";
  */
 unsigned int tabspaces = 8;
 
-/* Terminal colors (16 first used in escape sequence) */
-static const char *colorname[] = {
-	/* 8 normal colors */
-	"black",
-	"red3",
-	"green3",
-	"yellow3",
-	"blue2",
-	"magenta3",
-	"cyan3",
-	"gray90",
-
-	/* 8 bright colors */
-	"gray50",
-	"red",
-	"green",
-	"yellow",
-	"#5c5cff",
-	"magenta",
-	"cyan",
-	"white",
-
-	[255] = 0,
-
-	/* more colors can be added after 255 to use with DefaultXX */
-	"#cccccc",
-	"#555555",
+const char *colorname[] = {
+  /* London Tube colorscheme */
+  "#231f20", /* 0: black */
+  "#ee2e24", /* 1: red */
+  "#00853e", /* 2: green */
+  "#ffd204", /* 3: yellow */
+  "#009ddc", /* 4: blue */
+  "#98005d", /* 5: magenta */
+  "#85cebc", /* 6: cyan */
+  "#d9d8d8", /* 7: white */
+  "#737171", /* 8: brblack */
+  "#ee2e24", /* 9: brred */
+  "#00853e", /* 10: brgreen */
+  "#ffd204", /* 11: bryellow */
+  "#009ddc", /* 12: brblue */
+  "#98005d", /* 13: brmagenta */
+  "#85cebc", /* 14: brcyan */
+  "#ffffff", /* 15: brwhite */
 };
 
 
@@ -118,8 +109,8 @@ static const char *colorname[] = {
  */
 unsigned int defaultfg = 7;
 unsigned int defaultbg = 0;
-static unsigned int defaultcs = 256;
-static unsigned int defaultrcs = 257;
+unsigned int defaultcs = 7;
+unsigned int defaultrcs = 0;
 
 /*
  * Default shape of cursor
@@ -178,6 +169,8 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_Y,           selpaste,       {.i =  0} },
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
 	{ TERMMOD,              XK_I,           iso14755,       {.i =  0} },
+	{ ShiftMask,            XK_Up,          kscrollup,      {.i = -1} },
+	{ ShiftMask,            XK_Down,        kscrolldown,    {.i = -1} },
 };
 
 /*
