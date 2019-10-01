@@ -5,11 +5,11 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
+static char *font = "Liberation Mono:pixelsize=14:antialias=true:autohint=true";
 static int borderpx = 2;
 
 /*
- * What program is execed by st depends of these precedence rules:
+ * What program is executed by st depends of these precedence rules:
  * 1: program passed with -e
  * 2: utmp option
  * 3: SHELL environment variable
